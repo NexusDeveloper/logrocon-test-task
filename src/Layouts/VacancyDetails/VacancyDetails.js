@@ -61,10 +61,13 @@ export default class VacancyDetails extends Component{
 				<BlockContainer>
 					<SidebarFilter title="Работодатель">
 						<div>
-							<img src={vacancy.employer.logo_urls[90]}
-							     alt={vacancy.employer.name}
-							     className="pull-left mr-3"
-							     style={{maxWidth:70}}/>
+							{!('90' in vacancy.employer.logo_urls)?
+								null:
+								<img src={vacancy.employer.logo_urls['90']}
+								     alt={vacancy.employer.name}
+								     className="pull-left mr-3"
+								     style={{maxWidth:70}}/>
+							}
 							{vacancy.employer.name}
 						</div>
 					</SidebarFilter>
