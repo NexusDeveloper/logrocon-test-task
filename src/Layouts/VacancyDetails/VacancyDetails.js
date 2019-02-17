@@ -61,7 +61,7 @@ export default class VacancyDetails extends Component{
 				<BlockContainer>
 					<SidebarFilter title="Работодатель">
 						<div>
-							{!('90' in vacancy.employer.logo_urls)?
+							{!(vacancy.employer.logo_urls && '90' in vacancy.employer.logo_urls)?
 								null:
 								<img src={vacancy.employer.logo_urls['90']}
 								     alt={vacancy.employer.name}
